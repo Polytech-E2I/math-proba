@@ -14,45 +14,19 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
 #####################################################################
-      - name: Compile LaTeX report
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          working_directory: report/
+#          working_directory: report/
           root_file: main.tex
-          extra_system_packages: "py-pygments"
-          latexmk_shell_escape: true
-      - name: Rename report file
+      - name: Rename PDF file
         run: |
-          mv report/main.pdf report.pdf
-#####################################################################
-      - name: Compile LaTeX slideshow with notes
-        uses: xu-cheng/latex-action@v2
-        with:
-          working_directory: slideshow/
-          root_file: main.tex
-      - name: Rename slideshow-with-notes file
-        run: |
-          mv slideshow/main.pdf slideshow-with-notes.pdf
-#####################################################################
-      - name: Disable overlay and notes from slideshow
-        run: |
-          sed -ri 's/^\\documentclass\{beamer\}/\\documentclass[handout]\{beamer\}/g' slideshow/main.tex
-          sed -ri 's/^(\\setbeameroption\{show notes.*)/%\1/g' slideshow/main.tex
-      - name: Compile LaTeX slideshow without notes
-        uses: xu-cheng/latex-action@v2
-        with:
-          working_directory: slideshow/
-          root_file: main.tex
-      - name: Rename slideshow-without-notes file
-        run: |
-          mv slideshow/main.pdf slideshow-without-notes.pdf
+          mv main.pdf math-proba.pdf
 #####################################################################
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            report.pdf
-            slideshow-with-notes.pdf
-            slideshow-without-notes.pdf
+            math-proba.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
