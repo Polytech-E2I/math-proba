@@ -1,0 +1,83 @@
+\chapter{Définitions}
+\label{Chapter01}
+
+\section{Dénombrement}
+
+\subsection{Cardinal}
+
+Si l'on considère un ensemble $E$ quelconque, le nombre d'éléments distincts qui le composent est appelé \textbf{cardinal de E} et se note $card(E)$.
+
+\begin{example}
+	$card(\emptyset) = 0$
+
+	$card(\mathbb{N}) = card(\mathbb{R}) = \infty$
+
+	$card( \{5, 37, \sqrt{2}, 25.54, \pi\} ) = 5$
+\end{example}
+
+\subsection{Listes}
+
+Une liste est un ensemble ordonné d'éléments.
+
+\begin{definition}
+	Le nombre de listes composées de $k$ éléments chacun compris entre $1$ et $n$ vaut $n^k$.
+\end{definition}
+\begin{example}
+	Si on tire 3 fois un D6 pour créer une liste ordonnée de 3 éléments, il y a $6^3$ possibilités de listes différentes.
+\end{example}
+
+\subsection{Arrangements}
+
+Dans un ensemble à $n$ éléments, le nombre de listes de $k$ éléments sans répétition (c'est-à-dire : tous les éléments d'une liste sont uniques) est appelé \textbf{arrangement} et se note $A^k_n$.
+
+\begin{definition}
+	L'arrangement de $k$ éléments parmi $n$ vaut :
+
+	\begin{equation*}
+		\begin{split}
+			\forall (k,n) \in \mathbb{N}^2, k \le n \\
+			A^k_n = \frac{n!}{(n-k)!}
+		\end{split}
+	\end{equation*}
+\end{definition}
+
+\subsection{Permutations}
+
+Le nombre de permutations possibles d'un ensemble de cardinal $n$ vaut $n!$.
+
+\begin{remarque}
+	Cela correspond à un arrangement de $n$ éléments parmi $n$ :
+	\begin{equation*}
+		A^n_n = \frac{n!}{(n-n)!} = n!
+	\end{equation*}
+\end{remarque}
+
+\subsection{Combinaisons}
+
+Le nombre de listes non ordonnées de $k$ éléments uniques parmi $n$ est appelé \textbf{combinaison} et se note $C^k_n$ ou $\binom{n}{k}$. On peut retrouver graphiquement les valeurs de ce coefficient binomial en utilisant le \href{https://en.wikipedia.org/wiki/Pascal%27s_triangle}{triangle de Pascal}.
+
+\begin{definition}
+	\begin{equation*}
+		\begin{split}
+			\forall (k,n) \in \mathbb{N}^2, k \le n \\
+			C^k_n = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+		\end{split}
+	\end{equation*}
+\end{definition}
+
+\begin{remarque}
+	La combinaison est liée à l'arrangement :
+	\begin{equation*}
+		C^k_n = \frac{A^k_n}{k!}
+	\end{equation*}
+\end{remarque}
+
+\begin{remarque}
+	Un ensemble de $k$ éléments parmi $n$ a la même taille que son complémentaire :
+
+	\begin{equation*}
+		\binom{n}{k} = \binom{n}{n-k}
+	\end{equation*}
+\end{remarque}
+
+\section{Probabilités}

@@ -1,0 +1,90 @@
+\documentclass[12pt, a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=20mm]{geometry}
+\usepackage[french]{babel}
+
+\usepackage{lmodern}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, % make the links colored
+    linkcolor=black, % color TOC links in blue
+    linktoc=all % 'all' will create links for everything in the TOC
+}
+
+\usepackage[inter-unit-product =\cdot]{siunitx}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\usepackage[usenames, dvipsnames]{xcolor}
+
+\usepackage{tcolorbox}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzset{vecteur/.style={->, very thick, >=stealth}}
+\tikzset{point/.style={color=darkgray}}
+\tikzset{festat/.style={color=Green}}
+\tikzset{unitaire/.style={color=violet}}
+\tikzset{cestat/.style={color=blue}}
+
+\usepackage[tikz]{bclogo}
+
+
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand*\mean[1]{\overline{#1}}
+
+\newenvironment{example}
+    {
+        \begin{tcolorbox}
+            \textit{Exemple}
+            \newline
+            \newline
+    }
+    {
+        \end{tcolorbox}
+    }
+
+\newenvironment{definition}
+    {
+        \begin{tcolorbox}
+            \textbf{Définition}
+            \newline
+            \newline
+    }
+    {
+        \end{tcolorbox}
+    }
+
+\newenvironment{remarque}
+    {
+        \begin{tcolorbox}
+            \textit{Remarque}
+            \newline
+            \newline
+    }
+    {
+        \end{tcolorbox}
+    }
+
+
+\title{\textbf{Probabilités} \\
+\large Cours de François BLANCHET et Nathalie GUYADER \\
+Polytech E2I}
+\author{\textit{Robin SHAMSNEJAD}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+\include{Chapters/Chapter01.tex}
+
+\end{document}
