@@ -8,11 +8,11 @@
 Si l'on considère un ensemble $E$ quelconque, le nombre d'éléments distincts qui le composent est appelé \textbf{cardinal de E} et se note $card(E)$.
 
 \begin{example}
-	$card(\emptyset) = 0$
+    $card(\emptyset) = 0$
 
-	$card(\mathbb{N}) = card(\mathbb{R}) = \infty$
+    $card(\mathbb{N}) = card(\mathbb{R}) = \infty$
 
-	$card( \{5, 37, \sqrt{2}, 25.54, \pi\} ) = 5$
+    $card( \{5, 37, \sqrt{2}, 25.54, \pi\} ) = 5$
 \end{example}
 
 \subsection{Listes}
@@ -20,10 +20,10 @@ Si l'on considère un ensemble $E$ quelconque, le nombre d'éléments distincts 
 Une liste est un ensemble ordonné d'éléments.
 
 \begin{definition}
-	Le nombre de listes composées de $k$ éléments chacun compris entre $1$ et $n$ vaut $n^k$.
+    Le nombre de listes composées de $k$ éléments chacun compris entre $1$ et $n$ vaut $n^k$.
 \end{definition}
 \begin{example}
-	Si on tire 3 fois un D6 pour créer une liste ordonnée de 3 éléments, il y a $6^3$ possibilités de listes différentes.
+    Si on tire 3 fois un D6 pour créer une liste ordonnée de 3 éléments, il y a $6^3$ possibilités de listes différentes.
 \end{example}
 
 \subsection{Arrangements}
@@ -31,14 +31,14 @@ Une liste est un ensemble ordonné d'éléments.
 Dans un ensemble à $n$ éléments, le nombre de listes de $k$ éléments sans répétition (c'est-à-dire : tous les éléments d'une liste sont uniques) est appelé \textbf{arrangement} et se note $A^k_n$.
 
 \begin{definition}
-	L'arrangement de $k$ éléments parmi $n$ vaut :
+    L'arrangement de $k$ éléments parmi $n$ vaut :
 
-	\begin{equation*}
-		\begin{split}
-			\forall (k,n) \in \mathbb{N}^2, k \le n \\
-			A^k_n = \frac{n!}{(n-k)!}
-		\end{split}
-	\end{equation*}
+    \begin{equation*}
+        \begin{split}
+            \forall (k,n) \in \mathbb{N}^2, k \le n \\
+            A^k_n = \frac{n!}{(n-k)!}
+        \end{split}
+    \end{equation*}
 \end{definition}
 
 \subsection{Permutations}
@@ -46,10 +46,10 @@ Dans un ensemble à $n$ éléments, le nombre de listes de $k$ éléments sans r
 Le nombre de permutations possibles d'un ensemble de cardinal $n$ vaut $n!$.
 
 \begin{remarque}
-	Cela correspond à un arrangement de $n$ éléments parmi $n$ :
-	\begin{equation*}
-		A^n_n = \frac{n!}{(n-n)!} = n!
-	\end{equation*}
+    Cela correspond à un arrangement de $n$ éléments parmi $n$ :
+    \begin{equation*}
+        A^n_n = \frac{n!}{(n-n)!} = n!
+    \end{equation*}
 \end{remarque}
 
 \subsection{Combinaisons}
@@ -57,27 +57,27 @@ Le nombre de permutations possibles d'un ensemble de cardinal $n$ vaut $n!$.
 Le nombre de listes non ordonnées de $k$ éléments uniques parmi $n$ est appelé \textbf{combinaison} et se note $C^k_n$ ou $\binom{n}{k}$. On peut retrouver graphiquement les valeurs de ce coefficient binomial en utilisant le \href{https://en.wikipedia.org/wiki/Pascal%27s_triangle}{triangle de Pascal}.
 
 \begin{definition}
-	\begin{equation*}
-		\begin{split}
-			\forall (k,n) \in \mathbb{N}^2, k \le n \\
-			C^k_n = \binom{n}{k} = \frac{n!}{k!(n-k)!}
-		\end{split}
-	\end{equation*}
+    \begin{equation*}
+        \begin{split}
+            \forall (k,n) \in \mathbb{N}^2, k \le n \\
+            C^k_n = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+        \end{split}
+    \end{equation*}
 \end{definition}
 
 \begin{remarque}
-	La combinaison est liée à l'arrangement :
-	\begin{equation*}
-		C^k_n = \frac{A^k_n}{k!}
-	\end{equation*}
+    La combinaison est liée à l'arrangement :
+    \begin{equation*}
+        C^k_n = \frac{A^k_n}{k!}
+    \end{equation*}
 \end{remarque}
 
 \begin{remarque}
-	Un ensemble de $k$ éléments parmi $n$ a la même taille que son complémentaire :
+    Un ensemble de $k$ éléments parmi $n$ a la même taille que son complémentaire :
 
-	\begin{equation*}
-		\binom{n}{k} = \binom{n}{n-k}
-	\end{equation*}
+    \begin{equation*}
+        \binom{n}{k} = \binom{n}{n-k}
+    \end{equation*}
 \end{remarque}
 
 \subsection{Choix d'une méthode de dénombrement}
@@ -88,3 +88,51 @@ En cas de doute sur la méthode à choisir, suivre ce diagramme :
 \input{Figures/CountingFlowchart.tex}
 
 \section{Probabilités}
+
+\subsection{Expérience aléatoire}
+
+%\begin{definition}
+    On appelle \textbf{expérience aléatoire} une expérience qui fait intervenir le hasard. On connaît l’ensemble des \textbf{issues} (ou résultats) possibles sans savoir laquelle de celles-ci se réalisera. Il est possible de répéter un certain nombre de fois cette expérience dans des conditions identiques.
+%\end{definition}
+
+\begin{definition}
+    L’ensemble, souvent noté $\Omega$, de toutes les issues possibles est appelé \textbf{univers} ou \textbf{espace d’échantillonnage} de l’expérience.
+\end{definition}
+
+\begin{example}
+    \begin{itemize}
+        \item On lance un D6 : $\Omega = \{1,2,3,4,5,6\}$
+        \item Dans une chaîne de fabrication, on contrôle l'état des pièces en sortie : $\Omega = \{\text{"conforme", "non conforme"}\}$
+        \item On choisit un point dans le plan : $\Omega = \mathbb{R}^2$
+    \end{itemize}
+\end{example}
+
+\subsection{Évènement}
+
+Un sous-ensemble de $\Omega$ est appelé \textbf{évènement}. Il correspond à la réalisation d'une proposition. Par exemple, si on lance un D6, et que l'on définit la proposition << le résultat est 2 ou 5 >>, alors l'évènement associé est $\{2,5\} \subset \Omega$.
+
+\begin{definition}
+    On note $\mathcal{P}(\Omega)$ l'ensemble des évènements de l'expérience.
+\end{definition}
+
+\begin{definition}
+    \begin{itemize}
+        \item $\Omega$ est l'évènement \textbf{certain}
+        \item $\emptyset$ est l'évènement \textbf{impossible}
+        \item On appelle évènement \textbf{élémentaire} un évènement qui n'a qu'une seule issue, souvent noté $\omega$.
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    Si on lance un D6, << le résultat est 1 >> est un évènement élémentaire, alors que << on obtient un nombre pair >> est un évènement normal (donc composé d'évènements élémentaires).
+\end{example}
+
+\begin{example}
+    Si on a $\Omega = \{\omega_1,\omega_2,\omega_3\}$, alors :
+    \begin{equation*}
+        \mathcal{P}(\Omega) = \{ \emptyset,\{\omega_1\},\{\omega_2\},\{\omega_3\},\{\omega_1,\omega_2\},\{\omega_2,\omega_3\},\{\omega_1,\omega_3\},\{\omega_1,\omega_2,\omega_3\} \}
+    \end{equation*}
+    \begin{equation*}
+        card(\mathcal{P}(\Omega)) = 8 \neq card(\Omega)
+    \end{equation*}
+\end{example}
